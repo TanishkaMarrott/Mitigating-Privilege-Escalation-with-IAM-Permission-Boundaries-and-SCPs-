@@ -1,0 +1,34 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ec2:*",
+          "s3:*",
+          "cloudformation:*",
+          "lambda:*",
+          "rds:*"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "iam:CreateUser",
+          "iam:CreateRole",
+          "iam:AttachUserPolicy",
+          "iam:AttachRolePolicy",
+          "iam:PutUserPolicy",
+          "iam:PutRolePolicy"
+        ],
+        "Resource": "*",
+        "Condition": {
+          "StringEquals": {
+            "aws:RequestedRegion": "us-west-1"
+          }
+        }
+      }
+    ]
+  }
+  
