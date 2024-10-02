@@ -5,7 +5,18 @@
       "Effect": "Deny",
       "Action": [
         "iam:CreateUser",
-        "iam:CreateRole",
+        "iam:CreateRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::<account-id>:policy/PermissionBoundary"
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
         "iam:AttachUserPolicy",
         "iam:AttachRolePolicy"
       ],

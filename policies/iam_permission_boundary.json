@@ -7,15 +7,16 @@
         "iam:CreateUser",
         "iam:CreateRole",
         "iam:AttachUserPolicy",
-        "iam:AttachRolePolicy"
+        "iam:AttachRolePolicy",
+        "iam:PutRolePolicy"
       ],
       "Resource": "*",
       "Condition": {
         "StringLike": {
-          "iam:PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-        },
-        "StringNotEquals": {
-          "iam:PermissionsBoundary": "arn:aws:iam::<account-id>:policy/PermissionBoundary"
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/AdministratorAccess",
+            "arn:aws:iam::aws:policy/*FullAccess"
+          ]
         }
       }
     }
