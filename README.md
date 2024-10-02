@@ -30,13 +30,12 @@ Here’s the structure we’re using:
 
 ```
 ├── terraform/                       # Terraform configurations for this security setup
-│   ├── main.tf                      # Core setup for IAM roles, SCPs, and permission boundaries
+│   ├── main.tf                      # Core setup for IAM roles, SCPs and permission boundaries
 │   ├── variables.tf                 # Defines variables used in the Terraform files
 │   ├── outputs.tf                   # Outputs for useful IDs and ARNs
 │   ├── policies/                    # Policy JSON files go here
 │   │   ├── project_lead_assume_role.json    # Assume role policy for project leads
-│   │   ├── iam_permission_boundary.json     # IAM permission boundary for controlling privilege escalation
-│   └── versions/                    # Folder containing SCP versions for version-controlled security policies
+│   │   ├── iam_permission_boundary.json     # IAM permission boundary
 ```
 
 ---
