@@ -5,7 +5,9 @@
       "Effect": "Deny",
       "Action": [
         "iam:CreateUser",
-        "iam:CreateRole"
+        "iam:CreateRole",
+        "iam:PassRole",
+        "sts:AssumeRole"
       ],
       "Resource": "*",
       "Condition": {

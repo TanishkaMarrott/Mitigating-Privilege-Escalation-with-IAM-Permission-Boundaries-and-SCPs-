@@ -8,7 +8,9 @@
         "iam:CreateRole",
         "iam:AttachUserPolicy",
         "iam:AttachRolePolicy",
-        "iam:PutRolePolicy"
+        "iam:PutRolePolicy",
+        "iam:PassRole",
+        "sts:AssumeRole"
       ],
       "Resource": "*",
       "Condition": {
